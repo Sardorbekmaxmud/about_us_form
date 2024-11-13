@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <title>Customers</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex, follow">
+        <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap2/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate2/animate.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/select22/select2.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar2/perfect-scrollbar.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/util2.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main2.css' %}">
+
+    </head>
+    <body>
+
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100">
+                        <table>
+                            <thead>
+                                <tr class="table100-head">
+                                    <th class="column2">ID</th>
+                                    <th class="column3">First Name</th>
+                                    <th class="column3">Last Name</th>
+                                    <th class="column4">Email</th>
+                                    <th class="column5">Phone Number</th>
+                                    <th class="column6">Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for customer in customers %}
+                                <tr>
+                                    <td class="column1">{{ customer.id }}</td>
+                                    <td class="column2">{{ customer.first_name }}</td>
+                                    <td class="column3">{{ customer.last_name }}</td>
+                                    <td class="column4">{{ customer.email }}</td>
+                                    <td class="column5">{{ customer.phone_number }}</td>
+                                    <td class="column6">{{ customer.message }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'vendor/jquery2/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap2/js/popper.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap2/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'vendor/select22/select2.min.js' %}"></script>
+        <script src="{% static 'js/main2.js' %}"></script>
+    </body>
+</html>
